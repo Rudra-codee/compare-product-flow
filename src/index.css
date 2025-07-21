@@ -2,39 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* SmartCompare Design System - Modern product comparison platform */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 225 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* SmartCompare brand colors - Primary #6B5B7A */
+    --primary: 270 20% 42%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 270 25% 35%;
+    --primary-light: 270 35% 90%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Complementary secondary colors */
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 225 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 25% 97%;
+    --muted-foreground: 225 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors for comparisons and highlights */
+    --accent: 142 76% 85%;
+    --accent-foreground: 142 80% 25%;
+    --accent-success: 142 76% 40%;
+    --accent-warning: 38 92% 65%;
+    --accent-error: 0 84% 60%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 270 20% 42%;
+
+    /* SmartCompare gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(270, 20%, 42%), hsl(270, 25%, 35%));
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(210, 25%, 98%));
+    --gradient-comparison: linear-gradient(90deg, hsl(142, 76%, 85%), hsl(142, 60%, 75%));
+
+    /* Shadows */
+    --shadow-card: 0 4px 12px hsl(225, 15%, 15%, 0.08);
+    --shadow-hover: 0 8px 25px hsl(225, 15%, 15%, 0.15);
+    --shadow-comparison: 0 6px 20px hsl(270, 20%, 42%, 0.1);
 
     --radius: 0.5rem;
 
@@ -56,33 +74,42 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 225 25% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 225 25% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 225 25% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 270 35% 65%;
+    --primary-foreground: 225 25% 8%;
+    --primary-hover: 270 40% 70%;
+    --primary-light: 270 25% 15%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 225 25% 15%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 225 25% 12%;
+    --muted-foreground: 225 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 142 60% 20%;
+    --accent-foreground: 142 80% 85%;
+    --accent-success: 142 76% 50%;
+    --accent-warning: 38 92% 55%;
+    --accent-error: 0 84% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 70%;
+    --destructive-foreground: 225 25% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 225 25% 18%;
+    --input: 225 25% 18%;
+    --ring: 270 35% 65%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(270, 35%, 65%), hsl(270, 40%, 70%));
+    --gradient-card: linear-gradient(180deg, hsl(225, 25%, 10%), hsl(225, 25%, 12%));
+    --gradient-comparison: linear-gradient(90deg, hsl(142, 60%, 20%), hsl(142, 50%, 25%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +127,62 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* SmartCompare utility classes */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-comparison {
+    background: var(--gradient-comparison);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+
+  .shadow-comparison {
+    box-shadow: var(--shadow-comparison);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
